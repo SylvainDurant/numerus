@@ -1,0 +1,27 @@
+#cistercien { position:relative } /* Make this a positioned parent */
+
+#cistercien div {
+    position:absolute; 
+    width: 100px;
+    height: 100px;
+}
+#unit{
+    top:0px; 
+    left:100px;
+}
+#ten{
+    top:0px; 
+    left:0px;
+}
+#hundred{
+    top:200px; 
+    left:100px;
+}
+#thousand{
+    top:200px; 
+    left:0px;
+}
+
+.romanInputThousand {
+    text-decoration: overline
+}
