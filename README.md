@@ -1,3 +1,3 @@
 # Numerus
 
-(the link)[https://sylvaindurant.github.io/numerus/]
+[Link to the app](https://sylvaindurant.github.io/numerus/)
