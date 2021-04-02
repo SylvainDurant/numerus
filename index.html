@@ -9,22 +9,32 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <h4>Cistercian:</h4>
-    <div id="cistercien">
-        <canvas id="canvas" width=205 height=305></canvas>
-        <div id="unit"></div>
-        <div id="ten"></div>
-        <div id="hundred"></div>
-        <div id="thousand"></div>
+
+    <div id="arabian">
+        <h4><u>Arabian:</u></h4>
+        <input id="arabianInput" type="number">
     </div>
 
-    <div id="roman">
-        <h4>Roman:</h4>
-        <div id="romanInput"></div>
-    </div>
+    <div id="others">
 
-    <h4>Arabian:</h4>
-    <input id="arabianInput" type="number">
+        <div id="cistercian">
+            <h4><u>Cistercian:</u></h4>
+            <div id="canvas-warp">
+                <canvas id="canvas" width=205 height=305></canvas>
+                <div id="unit"></div>
+                <div id="ten"></div>
+                <div id="hundred"></div>
+                <div id="thousand"></div>
+            </div>
+        </div>
+    
+    
+        <div id="roman">
+            <h4><u>Roman:</u></h4>
+            <div id="romanInput"></div>
+        </div>
+
+    </div>
 
 </body>
 <script src="./js/main.js"></script>
