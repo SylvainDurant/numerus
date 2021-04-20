@@ -1,9 +1,9 @@
-const cacheName = 'numerus-pwa';
-const filesToCache = [
-  './',
-  './index.html',
-  './style/style.css',
-  './js/main.js'
+let cacheName = 'numerus-pwa';
+let filesToCache = [
+  '/',
+  '/index.html',
+  '/style/style.css',
+  '/js/main.js'
 ];
 
 /* Start the service worker and cache all of the app's content */
