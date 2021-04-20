@@ -1,3 +1,14 @@
+///// SERVICE WORKER /////
+window.onload = () => {
+  'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js');
+  }
+}
+//////////////////////////
+
 const arabianInput = document.getElementById("arabianInput");
 const romanInput = document.getElementById("romanInput");
 const canvas = document.getElementById("canvas");
