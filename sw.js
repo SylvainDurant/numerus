@@ -1,4 +1,4 @@
-let cacheName = 'numerus-pwa';
+let cacheName = 'numerus';
 let filesToCache = [
   '/',
   '/index.html',
