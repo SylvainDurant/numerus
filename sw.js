@@ -1,4 +1,3 @@
-console.log("in sw.js");
 let cacheName = 'numerus';
 let filesToCache = [
   './index.html',
