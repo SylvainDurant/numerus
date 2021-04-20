@@ -1,5 +1,4 @@
-html,
-.fullscreen {
+html, .fullscreen {
   display: flex;
   height: 100%;
   margin: 0;
