@@ -9,15 +9,9 @@ let filesToCache = [
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
   e.waitUntil(
-//     caches.open(cacheName).then(function(cache) {
-//       return cache.addAll(filesToCache);
-//     })
-    caches.open(cacheName).then(cache => {
-      return cache.match(evt.request).then(cacheResponse => cacheResponse || fetch(evt.request).then(networkResponse => {
-        cache.put(evt.request, networkResponse.clone());
-        return networkResponse;
-      });
-    });
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(filesToCache);
+    })
   );
 });
 
