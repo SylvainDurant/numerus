@@ -1,11 +1,8 @@
 ///// SERVICE WORKER /////
 window.onload = () => {
-  console.log("lauching service worker");
-  console.log(navigator);
   'use strict';
 
   if ('serviceWorker' in navigator) {
-    console.log("redirected to sw.js");
     navigator.serviceWorker.register('./sw.js');
   }
 }
