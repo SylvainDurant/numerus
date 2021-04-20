@@ -1,6 +1,11 @@
 {
   "name": "Numerus",
   "short_name": "Numerus",
+  "icons": [{
+    "src": "./images/numerusIcon.png",
+      "sizes": "275x183",
+      "type": "image/png"
+    }],
   "lang": "en-US",
   "start_url": "./index.html",
   "display": "standalone",
