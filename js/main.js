@@ -1,5 +1,7 @@
 ///// SERVICE WORKER /////
 window.onload = () => {
+  console.log("lauching service worker");
+  console.log(navigator);
   'use strict';
 
   if ('serviceWorker' in navigator) {
