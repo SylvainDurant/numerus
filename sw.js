@@ -14,8 +14,9 @@ self.addEventListener('install', function(e) {
 //     })
     caches.open(cacheName).then(cache => {
       return cache.match(evt.request).then(cacheResponse => cacheResponse || fetch(evt.request).then(networkResponse => {
-      cache.put(evt.request, networkResponse.clone());
-      return networkResponse;
+        cache.put(evt.request, networkResponse.clone());
+        return networkResponse;
+      });
     });
   );
 });
