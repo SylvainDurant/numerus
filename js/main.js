@@ -5,6 +5,7 @@ window.onload = () => {
   'use strict';
 
   if ('serviceWorker' in navigator) {
+    console.log("redirected to sw.js");
     navigator.serviceWorker.register('./sw.js');
   }
 }
