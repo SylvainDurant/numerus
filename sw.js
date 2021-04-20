@@ -1,10 +1,9 @@
 console.log("in sw.js");
 let cacheName = 'numerus';
 let filesToCache = [
-  '/',
-  '/index.html',
-  '/style/style.css',
-  '/js/main.js'
+  './index.html',
+  './style/style.css',
+  './js/main.js'
 ];
 
 /* Start the service worker and cache all of the app's content */
