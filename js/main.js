@@ -25,9 +25,6 @@ const showInstallButton = () => {
             let thanks = document.getElementById("message");
             thanks.innerHTML = "Thank you for installing my app!";
         }
-        if (!outcome || outcome === undefined) {
-            let target = document.getElementById("installButtonContainer").setAttribute("style", "visibility: hidden;");
-        }
         console.log(`User response to the install prompt: ${outcome}`);
 
         // We've used the prompt, and can't use it again, throw it away
