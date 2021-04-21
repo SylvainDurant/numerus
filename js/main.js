@@ -1,36 +1,36 @@
 ///// BEFORE INSTALL PROMPT /////
 // Initialize deferredPrompt for use later to show browser install prompt.
-let deferredPrompt;
+// let deferredPrompt;
 
-const showInstallButton = () => {
-    document.getElementById("installButton").addEventListener("click", async () => {
-        // Show the install prompt
-        deferredPrompt.prompt();
+// const showInstallButton = () => {
+//     document.getElementById("installButton").addEventListener("click", async () => {
+//         // Show the install prompt
+//         deferredPrompt.prompt();
 
-        // Wait for the user to respond to the prompt
-        const { outcome } = await deferredPrompt.userChoice;
+//         // Wait for the user to respond to the prompt
+//         const { outcome } = await deferredPrompt.userChoice;
 
-        // Optionally, send analytics event with outcome of user choice
-        if (outcome === "accepted") {
-            let thanks = document.getElementById("message");
-            thanks.innerHTML = "Thank you for installing my app!";
-        }
-        console.log(`User response to the install prompt: ${outcome}`);
+//         // Optionally, send analytics event with outcome of user choice
+//         if (outcome === "accepted") {
+//             let thanks = document.getElementById("message");
+//             thanks.innerHTML = "Thank you for installing my app!";
+//         }
+//         console.log(`User response to the install prompt: ${outcome}`);
 
-        // We've used the prompt, and can't use it again, throw it away
-        deferredPrompt = null;
-    });   
-}
+//         // We've used the prompt, and can't use it again, throw it away
+//         deferredPrompt = null;
+//     });   
+// }
 
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
+// window.addEventListener('beforeinstallprompt', (e) => {
+//     // Stash the event so it can be triggered later.
+//     deferredPrompt = e;
 
-    // creating install button
-    console.log("beforeinstallprompt detected");
-    console.log(deferredPrompt);
-    showInstallButton();
-});
+//     // creating install button
+//     console.log("beforeinstallprompt detected");
+//     console.log(deferredPrompt);
+//     showInstallButton();
+// });
 /////////////////////////////////
 
 const arabianInput = document.getElementById("arabianInput");
