@@ -3,7 +3,8 @@ const staticResource = [
   '/',
   '/index.html',
   '/style/style.css',
-  '/js/main.js'
+  '/js/main.js',
+  '/js/app.js'
 ];
 
 /* Start the service worker and cache all of the app's content */
