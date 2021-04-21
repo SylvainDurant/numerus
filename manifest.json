@@ -29,6 +29,6 @@
   "lang": "en-US",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#630000",
-  "theme_color": "#006305"
+  "background_color": "black",
+  "theme_color": "black"
 }
