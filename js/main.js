@@ -1,13 +1,3 @@
-///// SERVICE WORKER /////
-window.onload = () => {
-    'use strict';
-
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js');
-    }
-}
-//////////////////////////
-
 ///// BEFORE INSTALL PROMPT /////
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
