@@ -13,6 +13,7 @@ self.addEventListener('install', (e) => {
   
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
+      console.log("caching static resources");
       return cache.addAll(staticResource);
     })
   );
