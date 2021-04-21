@@ -12,16 +12,51 @@ window.onload = () => {
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
-const showInstallButton = () => {
+// const showInstallButton = () => {
+//     const installButton = document.getElementById("installButton");
+
+//     let button = document.createElement("button");
+//     button.innerHTML="Instal Me";
+    
+//     button.addEventListener("click", async () => {
+//         // Show the install prompt
+//         deferredPrompt.prompt();
+
+//         // Wait for the user to respond to the prompt
+//         const { outcome } = await deferredPrompt.userChoice;
+
+//         // Optionally, send analytics event with outcome of user choice
+//         if (outcome === "accepted") {
+//             let thanks = document.getElementById("message");
+//             thanks.innerHTML = "Thank you for installing my app!";
+//         }
+//         console.log(`User response to the install prompt: ${outcome}`);
+
+//         // We've used the prompt, and can't use it again, throw it away
+//         deferredPrompt = null;
+//         button.remove();
+//     });   
+
+//     installButton.appendChild(button);
+// }
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+
+    // Optionally, send analytics event that PWA install promo was shown.
+    console.log(`'beforeinstallprompt' event was fired.`);
+//     showInstallButton();
+    
     const installButton = document.getElementById("installButton");
 
     let button = document.createElement("button");
     button.innerHTML="Instal Me";
     
     button.addEventListener("click", async () => {
-        console.log("click");
-        console.log(deferredPrompt);
-
         // Show the install prompt
         deferredPrompt.prompt();
 
@@ -41,18 +76,6 @@ const showInstallButton = () => {
     });   
 
     installButton.appendChild(button);
-}
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
-    e.preventDefault();
-
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
-
-    // Optionally, send analytics event that PWA install promo was shown.
-    console.log(`'beforeinstallprompt' event was fired.`);
-    showInstallButton();
 });
 /////////////////////////////////
 
