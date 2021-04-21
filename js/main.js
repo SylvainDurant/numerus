@@ -13,12 +13,7 @@ window.onload = () => {
 let deferredPrompt;
 
 const showInstallButton = () => {
-    const installButton = document.getElementById("installButton");
-
-    let button = document.createElement("button");
-    button.innerHTML="Instal Me";
-    
-    button.addEventListener("click", async () => {
+    document.getElementById("installButton").addEventListener("click", async () => {
         // Show the install prompt
         deferredPrompt.prompt();
 
@@ -34,11 +29,7 @@ const showInstallButton = () => {
 
         // We've used the prompt, and can't use it again, throw it away
         deferredPrompt = null;
-        button.remove();
     });   
-
-    installButton.appendChild(button);
-    console.log("created Install Button");
 }
 
 window.addEventListener('beforeinstallprompt', (e) => {
