@@ -27,13 +27,31 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 const showInstallPromotion = () => {
-    const installButton = document.getElementById("installButton");
+    const target = document.getElementById("installButton");
 
-    let button = document.createElement("a");
-    button.href = deferredPrompt;
+    let buttonInstall = document.createElement("button");
 
     installButton.appendChild(button);
+    
+    buttonInstall.addEventListener('click', async () => {
+      // Hide the app provided install promotion
+      hideInstallPromotion();
+        
+      // Show the install prompt
+      deferredPrompt.prompt();
+        
+      // Wait for the user to respond to the prompt
+      const { outcome } = await deferredPrompt.userChoice;
+        
+      // Optionally, send analytics event with outcome of user choice
+      console.log(`User response to the install prompt: ${outcome}`);
+        
+      // We've used the prompt, and can't use it again, throw it away
+      deferredPrompt = null;
+    });
 }
+
+
 /////////////////////////////////
 
 const arabianInput = document.getElementById("arabianInput");
