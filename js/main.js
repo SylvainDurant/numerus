@@ -23,7 +23,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     console.log(`'beforeinstallprompt' event was fired.`);
 });
 
-document.getElementById("installButton").addEventListener('click', async () => {
+document.getElementById("installButton").addEventListener('click', () => {
     console.log("click");
 
     // Show the install prompt
