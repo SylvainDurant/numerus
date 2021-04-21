@@ -24,7 +24,7 @@ self.addEventListener('activate', (e) => {
 });
 
 // /* Serve cached content when offline */
-// self.addEventListener('fetch', (e) => {
+self.addEventListener('fetch', (e) => {
 //   console.log("fetch emitted", e);
   
 //   e.respondWith(
