@@ -1,5 +1,5 @@
-let cacheName = 'numerus';
-let filesToCache = [
+const cacheName = 'numerus';
+const staticResource = [
   './index.html',
   './style/style.css',
   './js/main.js'
@@ -11,7 +11,7 @@ self.addEventListener('install', (e) => {
   
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
+      return cache.addAll(staticResource);
     })
   );
 });
