@@ -30,7 +30,6 @@ const showInstallButton = () => {
 
         // Optionally, send analytics event with outcome of user choice
         if (outcome === "accepted") {
-            button.remove();
             let thanks = document.getElementById("message");
             thanks.innerHTML = "Thank you for installing my app!";
         }
@@ -38,6 +37,7 @@ const showInstallButton = () => {
 
         // We've used the prompt, and can't use it again, throw it away
         deferredPrompt = null;
+        button.remove();
     });   
 
     installButton.appendChild(button);
