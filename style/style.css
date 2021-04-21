@@ -96,7 +96,7 @@ h4 {
 
 /* STAND ALONE STYLE */
 @media all and (display-mode: standalone) {
-    #installButton {
+    #installButtonContainer {
       visibility: hidden;
     }
 }
