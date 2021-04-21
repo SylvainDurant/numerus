@@ -25,6 +25,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 document.getElementById("installButton").addEventListener('click', async () => {
     console.log("click");
+    console.log(deferredPrompt);
 
     // Show the install prompt
     deferredPrompt.prompt();
@@ -33,6 +34,9 @@ document.getElementById("installButton").addEventListener('click', async () => {
     const { outcome } = await deferredPrompt.userChoice;
 
     // Optionally, send analytics event with outcome of user choice
+    if (outcome === "accepted") {
+    document.getElementById("installButton").remove();
+    }
     console.log(`User response to the install prompt: ${outcome}`);
 
     // We've used the prompt, and can't use it again, throw it away
