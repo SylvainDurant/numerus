@@ -1,8 +1,9 @@
 const cacheName = 'numerus-static';
 const staticResource = [
-  './index.html',
-  './style/style.css',
-  './js/main.js'
+  '/',
+  '/index.html',
+  '/style/style.css',
+  '/js/main.js'
 ];
 
 /* Start the service worker and cache all of the app's content */
