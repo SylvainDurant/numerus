@@ -1,5 +1,5 @@
 const cacheName = 'numerus-static';
-const staticResource = [
+const assets = [
   '/',
   '/index.html',
   '/style/style.css',
@@ -8,13 +8,13 @@ const staticResource = [
 ];
 
 /* Start the service worker and cache all of the app's content */
-self.addEventListener('install', (e) => {
+self.addEventListener('install', evt => {
   console.log("service worker has been installed");
   
-  e.waitUntil(
-    caches.open(cacheName).then((cache) => {
-      console.log("caching static resources");
-      return cache.addAll(staticResource);
+  evt.waitUntil(
+    caches.open(cacheName).then(cache => {
+      console.log("caching static assets");
+      cache.addAll(assets);
     })
   );
 });
@@ -23,13 +23,13 @@ self.addEventListener('activate', (e) => {
   console.log("service worker has been activated");
 });
 
-/* Serve cached content when offline */
-self.addEventListener('fetch', (e) => {
-  console.log("fetch emitted", e);
+// /* Serve cached content when offline */
+// self.addEventListener('fetch', (e) => {
+//   console.log("fetch emitted", e);
   
-  e.respondWith(
-    caches.match(e.request).then((response) => {
-      return response || fetch(e.request);
-    })
-  );
+//   e.respondWith(
+//     caches.match(e.request).then((response) => {
+//       return response || fetch(e.request);
+//     })
+//   );
 });
