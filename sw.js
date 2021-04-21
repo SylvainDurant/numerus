@@ -1,4 +1,4 @@
-const cacheName = 'numerus';
+const cacheName = 'numerus-static';
 const staticResource = [
   './index.html',
   './style/style.css',
