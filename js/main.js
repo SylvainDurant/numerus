@@ -35,8 +35,8 @@ document.getElementById("installButton").addEventListener('click', () => {
     // Optionally, send analytics event with outcome of user choice
     console.log(`User response to the install prompt: ${outcome}`);
 
-    // We've used the prompt, and can't use it again, throw it away
-    deferredPrompt = null;
+//     // We've used the prompt, and can't use it again, throw it away
+//     deferredPrompt = null;
 });
 
 
