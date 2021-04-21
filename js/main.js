@@ -38,6 +38,7 @@ const showInstallButton = () => {
     });   
 
     installButton.appendChild(button);
+    console.log("created Install Button");
 }
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -47,8 +48,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
 
-    // Optionally, send analytics event that PWA install promo was shown.
-    console.log(`'beforeinstallprompt' event was fired.`);
+    // creating install button
     showInstallButton();
 });
 /////////////////////////////////
