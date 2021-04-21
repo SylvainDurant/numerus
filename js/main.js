@@ -18,6 +18,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
+    console.log(deferredPrompt);
 
     // Optionally, send analytics event that PWA install promo was shown.
     console.log(`'beforeinstallprompt' event was fired.`);
@@ -35,7 +36,9 @@ document.getElementById("installButton").addEventListener('click', async () => {
 
     // Optionally, send analytics event with outcome of user choice
     if (outcome === "accepted") {
-    document.getElementById("installButton").remove();
+        document.getElementById("installButton").remove();
+        let thanks = document.getElementById("message");
+        thanks.innerHTML = "Thank you for installing my app!";
     }
     console.log(`User response to the install prompt: ${outcome}`);
 
