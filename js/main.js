@@ -12,6 +12,37 @@ window.onload = () => {
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
+const showInstallButton = () => {
+    const installButton = document.getElementById("installButton");
+
+    let button = document.createElement("button");
+    button.innerHTML="Instal Me";
+    
+    button.addEventListener("click", async () => {
+        console.log("click");
+        console.log(deferredPrompt);
+
+        // Show the install prompt
+        deferredPrompt.prompt();
+
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice;
+
+        // Optionally, send analytics event with outcome of user choice
+        if (outcome === "accepted") {
+            button.remove();
+            let thanks = document.getElementById("message");
+            thanks.innerHTML = "Thank you for installing my app!";
+        }
+        console.log(`User response to the install prompt: ${outcome}`);
+
+        // We've used the prompt, and can't use it again, throw it away
+        deferredPrompt = null;
+    });   
+
+    installButton.appendChild(button);
+}
+
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
@@ -21,32 +52,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
     // Optionally, send analytics event that PWA install promo was shown.
     console.log(`'beforeinstallprompt' event was fired.`);
-    console.log(deferredPrompt);
+    showInstallButton();
 });
-
-document.getElementById("installButton").addEventListener('click', async () => {
-    console.log("click");
-    console.log(deferredPrompt);
-
-    // Show the install prompt
-    deferredPrompt.prompt();
-
-    // Wait for the user to respond to the prompt
-    const { outcome } = await deferredPrompt.userChoice;
-
-    // Optionally, send analytics event with outcome of user choice
-    if (outcome === "accepted") {
-        document.getElementById("installButton").remove();
-        let thanks = document.getElementById("message");
-        thanks.innerHTML = "Thank you for installing my app!";
-    }
-    console.log(`User response to the install prompt: ${outcome}`);
-
-    // We've used the prompt, and can't use it again, throw it away
-    deferredPrompt = null;
-});
-
-
 /////////////////////////////////
 
 const arabianInput = document.getElementById("arabianInput");
