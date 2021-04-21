@@ -18,10 +18,10 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-    console.log(deferredPrompt);
 
     // Optionally, send analytics event that PWA install promo was shown.
     console.log(`'beforeinstallprompt' event was fired.`);
+    console.log(deferredPrompt);
 });
 
 document.getElementById("installButton").addEventListener('click', async () => {
