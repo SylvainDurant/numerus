@@ -93,3 +93,10 @@ h4 {
 .romanInputThousand {
     text-decoration: overline
 }
+
+/* STAND ALONE STYLE */
+@media all and (display-mode: standalone) {
+    #installButton {
+      visibility: hidden;
+    }
+}
