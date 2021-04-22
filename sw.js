@@ -1,4 +1,4 @@
-const cacheName = 'numerus-static';
+const cacheName = 'numerus-static-v1';
 const assets = [
   './index.html',
   './style/style.css',
@@ -6,10 +6,11 @@ const assets = [
   './js/app.js'
 ];
 
-/* Start the service worker and cache all of the app's content */
+///// INSTALL SERVICE WORKER
 self.addEventListener('install', evt => {
   console.log("service worker has been installed");
   
+  // cache the static assets
   evt.waitUntil(
     caches.open(cacheName).then(cache => {
       console.log("caching static assets");
@@ -18,12 +19,24 @@ self.addEventListener('install', evt => {
   );
 });
 
+///// ACTIVATE SERVICE WORKER
 self.addEventListener('activate', evt => {
   console.log("service worker has been activated");
+
+  // deleting old caches
+  evt.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(keys
+        .filter(key => key !== cacheName)
+        .map(key => caches.delete()))
+    })
+  )
 });
 
-// /* Serve cached content when offline */
+///// FETCH EVENTS
+// looks what the app is fetching
 self.addEventListener('fetch', evt => {
+  // looks if the fetched asset is already in the cache
   evt.respondWith(
     caches.match(evt.request).then(response => {
       return response || fetch(evt.request);
