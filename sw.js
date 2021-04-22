@@ -1,6 +1,5 @@
-const cacheName = 'numerus-static-v1.3.2';
+const cacheName = 'numerus-static-v1.3.3';
 const assets = [
-  '/',
   './index.html',
   './style/style.css',
   './js/main.js',
