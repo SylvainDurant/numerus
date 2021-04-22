@@ -1,10 +1,10 @@
-const cacheName = 'numerus-static-v1.3.3';
+const cacheName = 'numerus-static-v1.3.4';
 const assets = [
   './index.html',
   './style/style.css',
   './js/main.js',
   './js/app.js',
-  './images/background.jpg'
+  './images'
 ];
 
 ///// INSTALL SERVICE WORKER
