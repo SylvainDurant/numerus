@@ -1,4 +1,4 @@
-const cacheName = 'numerus-static-v1';
+const cacheName = 'numerus-static-v1.2';
 const assets = [
   './index.html',
   './style/style.css',
@@ -28,7 +28,7 @@ self.addEventListener('activate', evt => {
     caches.keys().then(keys => {
       return Promise.all(keys
         .filter(key => key !== cacheName)
-        .map(key => caches.delete()))
+        .map(key => caches.delete(key)))
     })
   )
 });
