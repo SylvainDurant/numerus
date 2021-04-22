@@ -18,17 +18,15 @@ self.addEventListener('install', evt => {
   );
 });
 
-self.addEventListener('activate', (e) => {
+self.addEventListener('activate', evt => {
   console.log("service worker has been activated");
 });
 
 // /* Serve cached content when offline */
-self.addEventListener('fetch', (e) => {
-//   console.log("fetch emitted", e);
-  
-//   e.respondWith(
-//     caches.match(e.request).then((response) => {
-//       return response || fetch(e.request);
-//     })
-//   );
+self.addEventListener('fetch', evt => {
+  evt.respondWith(
+    caches.match(evt.request).then(response => {
+      return response || fetch(evt.request);
+    })
+  );
 });
