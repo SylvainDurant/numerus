@@ -1,14 +1,14 @@
 const staticCache = "numerus-static-v1.5.2";
 const dynamicCache = "numerus-dynamic-v1";
 const assets = [
-  "/index.html",
-  "/favicon.ico",
-  "/pages/fallback.html",
-  "/style/style.css",
-  "/js/main.js",
-  "/js/insatllPrompt.js",
-  "/js/app.js",
-  "/images/background.jpg"
+  "./index.html",
+  "./favicon.ico",
+  "./pages/fallback.html",
+  "./style/style.css",
+  "./js/main.js",
+  "./js/insatllPrompt.js",
+  "./js/app.js",
+  "./images/background.jpg"
 ];
 
 ///// LIMIT CACHE SIZE
