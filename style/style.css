@@ -1,9 +1,18 @@
 body {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+
+#numerusApp {
+    margin: auto;
     text-align: center;
 }
 
